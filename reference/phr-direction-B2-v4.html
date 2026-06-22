@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PHR — Direction B2 · v4</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:       #FAFAF7;
+  --paper-2:     #F2F1EB;
+  --line:        #E2DECE;
+  --line-strong: #1F2D26;
+  --ink:         #15201B;
+  --ink-soft:    #4A574F;
+  --ink-light:   #7E8881;
+  --sage:        #234E3E;
+  --sage-deep:   #143226;
+  --sage-soft:   #BFD0C6;
+  --pink:        #AE0060;
+  --pink-deep:   #87004A;
+  --pink-soft:   #F4D6E4;
+  --amber:       #E8B96E;
+
+  --display:     "Familjen Grotesk", system-ui, sans-serif;
+  --body:        "Atkinson Hyperlegible", system-ui, sans-serif;
+
+  --max: 1240px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:var(--max);margin:0 auto;padding:0 56px;position:relative}
+
+section{
+  padding:128px 0 144px;
+  border-top:1px solid var(--line);
+  position:relative;
+}
+section:first-child{border-top:none}
+
+/* Quiet folio in upper-right — like a book page */
+.folio{
+  position:absolute;top:48px;right:56px;
+  font-family:var(--display);font-style:italic;font-weight:400;
+  font-size:14px;color:var(--ink-light);
+  letter-spacing:0;
+}
+
+.sec-label{
+  font-family:var(--display);font-style:italic;font-weight:500;
+  font-size:15px;color:var(--ink-soft);
+  margin-bottom:14px;
+  display:inline-block;
+  border-bottom:1.5px solid var(--sage);
+  padding-bottom:5px;
+}
+
+.sec-title{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(40px,4.4vw,60px);line-height:1.04;letter-spacing:-0.012em;
+  color:var(--ink);
+  margin-bottom:18px;
+  max-width:20ch;
+}
+.sec-title em{font-style:italic;font-weight:700;color:var(--ink)}
+.sec-title .pink{color:var(--ink);font-style:italic}
+.sec-title .sage{color:var(--sage)}
+
+.sec-sub{
+  font-family:var(--body);font-size:17px;line-height:1.55;color:var(--ink-soft);
+  margin-bottom:60px;max-width:54ch;
+}
+
+/* ───────────── NAV ───────────── */
+.nav{
+  border-bottom:1px solid var(--line);
+  padding:22px 56px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.nav .brand{display:flex;align-items:center;height:42px}
+.nav .brand img{height:40px;width:auto;display:block}
+.nav .meta{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;
+  color:var(--ink-soft);display:flex;align-items:center;gap:14px;
+}
+.nav .meta b{font-style:normal;font-weight:600;color:var(--ink)}
+
+/* ───────────── HERO ───────────── */
+.hero{padding:120px 0 160px;border-top:none}
+.hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:96px;align-items:end}
+
+.hero-mark{
+  display:flex;align-items:center;gap:18px;margin-bottom:36px;
+}
+.hero-mark .rule{
+  width:72px;height:2px;background:var(--sage);
+  transition:width .5s cubic-bezier(.2,.7,.2,1);
+}
+.hero-mark .label{
+  font-family:var(--display);font-style:italic;font-weight:500;font-size:14px;
+  color:var(--sage);letter-spacing:0.005em;
+}
+.hero:hover .hero-mark .rule{width:108px}
+
+.hero h1{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(58px,7.2vw,108px);line-height:1.0;letter-spacing:-0.022em;color:var(--ink);
+}
+.hero h1 em{font-style:italic;font-weight:700;color:var(--pink)}
+.hero h1 .pink{color:var(--pink)}
+.hero-sub{
+  font-family:var(--body);font-size:19px;line-height:1.5;color:var(--ink-soft);
+  margin-top:28px;max-width:46ch;
+}
+.hero-fact{
+  display:flex;align-items:center;gap:12px;margin-top:36px;
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft);
+}
+.hero-fact .dot{
+  width:8px;height:8px;background:var(--pink);border-radius:50%;flex-shrink:0;
+}
+
+.hero-side{
+  border-top:1px solid var(--ink);
+  padding-top:24px;
+  display:flex;flex-direction:column;gap:18px;
+}
+.hero-side .row{
+  display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:baseline;
+  padding-bottom:16px;border-bottom:1px solid var(--line);
+}
+.hero-side .row:last-child{border-bottom:none}
+.hero-side .row .k{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft);
+}
+.hero-side .row .v{
+  font-family:var(--body);font-size:15px;font-weight:400;color:var(--ink);line-height:1.45;
+}
+.hero-side .row .v b{font-weight:700;color:var(--pink-deep)}
+
+/* ───────────── PALETTE ───────────── */
+.palette{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:0;
+  border-top:1px solid var(--line-strong);
+  border-bottom:1px solid var(--line-strong);
+}
+.swatch{
+  padding:24px 22px;min-height:300px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-right:1px solid var(--line);
+  background:var(--paper);
+}
+.swatch:last-child{border-right:none}
+.swatch .chip{width:100%;height:110px;margin-bottom:24px;background:currentColor}
+.swatch .info .name{
+  font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-0.005em;color:var(--ink);
+}
+.swatch .info .hex{
+  font-family:var(--body);font-size:12px;color:var(--ink-soft);margin-top:4px;letter-spacing:0.02em;
+}
+.swatch .info .use{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:13px;
+  color:var(--ink-soft);margin-top:10px;line-height:1.4;
+}
+.s-paper{color:var(--paper-2)} .s-paper .chip{border:1px solid var(--line)}
+.s-sage{color:var(--sage)}
+.s-pink{color:var(--pink)}
+.s-ink{color:var(--ink)}
+.s-amber{color:var(--amber)}
+.s-soft{color:var(--sage-soft)}
+
+/* ───────────── TYPO ───────────── */
+.typo-stack{display:flex;flex-direction:column;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+.typo-card{
+  display:grid;grid-template-columns:260px 1fr;gap:64px;
+  padding:56px 0;border-bottom:1px solid var(--line);
+}
+.typo-card:last-child{border-bottom:none}
+
+.typo-meta .name{
+  font-family:var(--display);font-weight:700;font-size:24px;line-height:1.15;color:var(--ink);
+  margin-bottom:6px;
+}
+.typo-meta .by{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft);
+  margin-bottom:20px;
+}
+.typo-meta .desc{font-family:var(--body);font-size:14px;line-height:1.6;color:var(--ink-soft)}
+.typo-meta .desc b{font-weight:700;color:var(--ink)}
+.typo-meta .weights{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:13px;
+  color:var(--ink-light);margin-top:22px;padding-top:14px;border-top:1px solid var(--line);
+}
+
+.specimen{
+  font-family:var(--display);font-weight:700;
+  font-size:140px;line-height:0.92;letter-spacing:-0.025em;color:var(--ink);
+}
+.specimen em{font-style:italic;font-weight:700;color:var(--sage)}
+
+.specimen-body{
+  font-family:var(--body);font-weight:400;
+  font-size:108px;line-height:0.92;letter-spacing:-0.025em;color:var(--ink);
+}
+.specimen-body b{font-weight:700;color:var(--ink)}
+
+.running{
+  margin-top:24px;font-family:var(--display);font-weight:400;font-size:19px;line-height:1.5;color:var(--ink);
+  max-width:54ch;
+}
+.specimen-body + .running{font-family:var(--body);font-size:17px;line-height:1.55}
+
+/* ───────────── HIERARCHY ───────────── */
+.hier{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+.hier > div{
+  display:grid;grid-template-columns:120px 1fr;gap:48px;align-items:baseline;
+  padding:32px 0;border-bottom:1px solid var(--line);
+}
+.hier > div:last-child{border-bottom:none}
+.hier .tag{
+  font-family:var(--display);font-style:italic;font-weight:500;font-size:14px;color:var(--ink-light);
+}
+.h1-d{font-family:var(--display);font-weight:700;font-size:60px;line-height:1;letter-spacing:-0.022em;color:var(--ink)}
+.h1-d em{font-style:italic;font-weight:700;color:var(--sage)}
+.h2-d{font-family:var(--display);font-weight:600;font-size:36px;line-height:1.1;color:var(--sage);font-style:italic}
+.h3-d{font-family:var(--display);font-weight:700;font-size:17px;color:var(--sage);font-style:italic}
+.body-d{font-family:var(--body);font-size:17px;line-height:1.65;color:var(--ink);max-width:62ch;font-weight:400}
+.body-d em{font-style:italic;font-family:var(--display);font-weight:500;color:var(--sage)}
+.caption-d{font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft)}
+
+/* ───────────── COMPONENTS ───────────── */
+.comp-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);
+}
+.comp{padding:48px 40px;border-right:1px solid var(--line)}
+.comp:nth-child(even){border-right:none}
+.comp:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.comp .label{
+  font-family:var(--display);font-style:italic;font-weight:500;font-size:14px;color:var(--ink-soft);
+  margin-bottom:28px;display:block;
+}
+
+.btn-primary{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--ink);color:var(--paper);
+  padding:15px 22px;font-family:var(--display);font-size:14px;font-weight:700;
+  border:none;cursor:pointer;border-radius:2px;
+  letter-spacing:-0.005em;
+}
+.btn-primary:hover{background:var(--sage-deep)}
+.btn-primary .arrow{font-family:var(--display);font-style:italic;font-weight:400;color:var(--pink-soft);font-size:18px;line-height:0}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:12px;
+  background:transparent;color:var(--ink);
+  padding:14px 22px;font-family:var(--display);font-size:14px;font-weight:700;
+  border:1.5px solid var(--ink);cursor:pointer;border-radius:2px;
+  letter-spacing:-0.005em;
+}
+.btn-secondary .arrow{font-family:var(--display);font-style:italic;font-weight:400;color:var(--pink-deep);font-size:18px;line-height:0}
+
+.tag-c{
+  display:inline-block;
+  background:var(--sage-soft);color:var(--sage-deep);
+  padding:5px 12px;font-family:var(--display);font-size:13px;font-weight:600;
+  border-radius:3px;margin-right:6px;
+}
+.tag-c.outline{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.badge-c{
+  display:inline-block;background:var(--ink);color:var(--paper);
+  padding:5px 12px;font-family:var(--display);font-size:13px;font-weight:600;border-radius:3px;
+}
+.badge-c.amber{background:var(--amber);color:var(--ink)}
+
+.link-c{
+  font-family:var(--display);font-weight:600;font-style:italic;font-size:22px;color:var(--ink);
+  border-bottom:2px solid var(--sage);padding-bottom:3px;text-decoration:none;
+  display:inline-flex;align-items:baseline;gap:8px;
+}
+.link-c .arrow{color:var(--sage);font-weight:400}
+.link-c:hover{color:var(--sage)}
+
+.kpi{display:flex;align-items:baseline;gap:18px;padding:10px 0}
+.kpi .num{
+  font-family:var(--display);font-weight:700;font-size:60px;color:var(--ink);
+  letter-spacing:-0.028em;line-height:0.9;
+}
+.kpi .num em{font-style:italic;color:var(--sage)}
+.kpi .lab{
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft);
+  max-width:160px;line-height:1.4;
+}
+
+/* ───────────── VOICE ───────────── */
+.voice-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);
+}
+.voice-card{
+  padding:56px 36px;
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;gap:28px;
+}
+.voice-card:last-child{border-right:none}
+.voice-card .type{
+  font-family:var(--display);font-style:italic;font-weight:500;font-size:15px;color:var(--sage);
+}
+.voice-card .quote{
+  font-family:var(--display);font-weight:700;font-size:26px;line-height:1.22;letter-spacing:-0.012em;color:var(--ink);
+}
+.voice-card .quote em{font-style:italic;font-weight:700;color:var(--sage)}
+.voice-card .why{
+  font-family:var(--body);font-size:13.5px;color:var(--ink-soft);line-height:1.55;
+  padding-top:18px;border-top:1px solid var(--line);
+  margin-top:auto;
+}
+
+/* ───────────── MOCKUP ───────────── */
+.mockup{
+  background:var(--paper);
+  border:1px solid var(--line-strong);
+  padding:48px 56px 56px;
+}
+.mock-top{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-bottom:28px;border-bottom:1px solid var(--ink);margin-bottom:80px;
+}
+.mock-top .brand{display:flex;align-items:center;height:48px}
+.mock-top .brand img{height:46px;width:auto;display:block}
+.mock-nav{
+  display:flex;gap:32px;
+  font-family:var(--body);font-size:14px;color:var(--ink-soft);font-weight:400;
+}
+.mock-nav span{position:relative;cursor:pointer}
+.mock-nav span:nth-child(2){color:var(--ink);font-weight:700}
+.mock-nav span:nth-child(2)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--ink)}
+
+.mock-hero{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
+.mock-hero h2{
+  font-family:var(--display);font-weight:700;
+  font-size:clamp(48px,5.8vw,84px);line-height:1.02;letter-spacing:-0.022em;color:var(--ink);
+}
+.mock-hero h2 em{font-style:italic;font-weight:700;color:var(--sage)}
+.mock-hero p{
+  font-family:var(--body);font-size:16px;line-height:1.65;color:var(--ink);
+  margin:32px 0 36px;max-width:44ch;
+}
+.mock-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+.mock-aside{
+  background:var(--sage-deep);color:var(--paper);
+  padding:32px;border-radius:2px;
+  display:flex;flex-direction:column;gap:14px;
+}
+.mock-aside .who{
+  font-family:var(--display);font-style:italic;font-weight:500;font-size:13px;
+  color:var(--sage-soft);letter-spacing:0.005em;
+  padding-bottom:12px;border-bottom:1px solid rgba(232,185,110,0.35);
+}
+.mock-aside .quote{
+  font-family:var(--display);font-weight:500;font-style:italic;font-size:21px;line-height:1.3;
+  letter-spacing:-0.005em;color:var(--paper);
+  padding-left:14px;border-left:2px solid var(--amber);
+  margin:6px 0 4px;
+}
+.mock-aside .quote b{font-style:normal;font-weight:700;color:var(--paper)}
+.mock-aside .signature{
+  font-family:var(--body);font-size:13px;color:var(--sage-soft);line-height:1.5;font-style:normal;
+}
+.mock-aside .stats{
+  display:flex;flex-direction:column;gap:0;
+  margin-top:14px;padding-top:16px;border-top:1px solid rgba(232,185,110,0.35);
+}
+.mock-aside .stat{
+  display:flex;align-items:baseline;gap:14px;
+  padding:10px 0;border-bottom:1px dashed rgba(232,185,110,0.22);
+}
+.mock-aside .stat:last-child{border-bottom:none}
+.mock-aside .stat .n{
+  font-family:var(--display);font-weight:700;font-size:32px;color:var(--paper);
+  letter-spacing:-0.022em;line-height:1;flex-shrink:0;min-width:96px;
+}
+.mock-aside .stat .l{
+  font-family:var(--body);font-weight:400;font-size:13.5px;color:var(--sage-soft);
+  line-height:1.45;
+}
+.mock-foot{
+  margin-top:80px;padding-top:24px;border-top:1px solid var(--ink);
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-soft);
+}
+
+/* ───────────── RATIONALE ───────────── */
+.rationale{
+  display:grid;grid-template-columns:1fr 1.7fr;gap:80px;
+  padding:96px 0;
+  border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);
+}
+.rationale h3{
+  font-family:var(--display);font-weight:700;
+  font-size:48px;line-height:1.04;letter-spacing:-0.018em;color:var(--ink);
+}
+.rationale h3 em{font-style:italic;font-weight:700;color:var(--sage)}
+.rationale .body p{
+  font-family:var(--body);font-size:17px;line-height:1.7;color:var(--ink);font-weight:400;
+  margin-bottom:20px;max-width:62ch;
+}
+.rationale .body p em{font-style:italic;font-family:var(--display);font-weight:500;color:var(--sage)}
+.rationale .body p b{font-weight:700;color:var(--ink)}
+
+.foot{
+  padding:40px 56px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--ink-light);
+}
+
+/* ───────────── HOVER & MICRO-INTERACTIONS ───────────── */
+.btn-primary,.btn-secondary{transition:background .25s ease, color .25s ease, border-color .25s ease}
+.btn-primary .arrow,.btn-secondary .arrow{transition:transform .3s cubic-bezier(.2,.7,.2,1);display:inline-block}
+.btn-primary:hover .arrow{transform:translateX(5px)}
+.btn-secondary:hover{background:var(--sage);color:var(--paper);border-color:var(--sage)}
+.btn-secondary:hover .arrow{transform:translateX(5px);color:var(--paper)}
+
+.link-c{position:relative;transition:color .25s ease}
+.link-c::after{
+  content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--sage);
+  transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.link-c:hover{color:var(--sage)}
+.link-c:hover::after{transform:scaleX(1);transform-origin:left}
+.link-c .arrow{transition:transform .3s cubic-bezier(.2,.7,.2,1);display:inline-block}
+.link-c:hover .arrow{transform:translateX(5px)}
+
+.tag-c,.badge-c{transition:background .25s ease, color .25s ease, border-color .25s ease;cursor:default}
+.tag-c:hover{background:var(--sage);color:var(--paper)}
+.tag-c.outline:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.badge-c:hover{background:var(--pink-deep)}
+.badge-c.amber:hover{background:#d4a14d}
+
+.swatch{transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.swatch .info .name{transition:color .25s ease}
+.swatch:hover{transform:translateY(-3px)}
+.swatch:hover .info .name{color:var(--sage)}
+.swatch .chip{transition:height .4s cubic-bezier(.2,.7,.2,1)}
+.swatch:hover .chip{height:124px}
+
+.voice-card{transition:background .35s ease;cursor:default}
+.voice-card:hover{background:rgba(35,78,62,0.04)}
+.voice-card .quote em{transition:transform .3s ease;display:inline-block}
+.voice-card:hover .quote em{transform:translateX(2px)}
+
+.kpi{transition:color .25s ease;cursor:default}
+.kpi .num em{transition:color .3s ease}
+.kpi:hover .num em{color:var(--sage)}
+
+.nav .brand img{transition:opacity .25s ease}
+.nav .brand:hover img{opacity:0.65}
+.nav .brand{cursor:pointer}
+
+.mock-nav span{transition:color .2s ease;cursor:pointer}
+.mock-nav span:not(:nth-child(2)):hover{color:var(--ink)}
+.mock-top .brand img{transition:opacity .25s ease}
+.mock-top .brand:hover img{opacity:0.65}
+
+.mock-aside .stat .l{transition:color .25s ease}
+.mock-aside .stat:hover .l{color:var(--paper)}
+
+.typo-card{transition:background .35s ease}
+.typo-card:hover{background:rgba(35,78,62,0.025)}
+.specimen em,.specimen-body b{transition:color .35s ease;display:inline-block}
+.typo-card:hover .specimen em{color:var(--sage)}
+.typo-card:hover .specimen-body b{color:var(--sage)}
+
+.sec-label{position:relative;display:inline-block}
+.sec-label::after{
+  content:"";position:absolute;left:0;right:auto;bottom:-1.5px;height:1.5px;background:var(--sage);
+  width:0;transition:width .5s cubic-bezier(.2,.7,.2,1);
+}
+section:hover .sec-label::after{width:100%}
+
+@media (max-width:1000px){
+  .hero-grid,.mock-hero,.rationale,.typo-card{grid-template-columns:1fr;gap:40px}
+  .palette,.comp-grid{grid-template-columns:1fr 1fr}
+  .comp:nth-child(odd){border-right:1px solid var(--line)}
+  .comp:nth-child(even){border-right:none}
+  .voice-grid{grid-template-columns:1fr}
+  .voice-card{border-right:none;border-bottom:1px solid var(--line)}
+  section{padding:88px 0}
+  .wrap{padding:0 28px}
+  .nav{padding:18px 28px;flex-wrap:wrap;gap:14px}
+  .specimen,.specimen-body{font-size:80px}
+  .folio{right:28px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><img src="phr-logo.png" alt="PhR" /></div>
+  <div class="meta">Direction B2 · <b>v4</b> · Tech &amp; Humanité</div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="folio">i</span>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-mark">
+          <span class="rule"></span>
+          <span class="label">Cabinet fiduciaire · Sion · depuis 1982</span>
+        </div>
+        <h1>On <em>code</em> votre comptabilité,<br/>vous dirigez votre boîte.</h1>
+        <p class="hero-sub">Cabinet fiduciaire suisse fondé en 1982. Comptabilité, fiscalité et automatisation des processus — pour les PME, les indépendants et les cabinets médicaux qui n'ont plus le temps d'ouvrir Excel.</p>
+        <div class="hero-fact">
+          <span class="dot"></span>
+          <span>Une équipe de dix collaborateurs · reprise par CR</span>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div class="row"><span class="k">Direction</span><span class="v">B2 — version 4, rose en signature rare</span></div>
+        <div class="row"><span class="k">Univers</span><span class="v">Imprimeur suisse qui ferait du logiciel</span></div>
+        <div class="row"><span class="k">Signature</span><span class="v">Vert empire + rose Céline</span></div>
+        <div class="row"><span class="k">Règles</span><span class="v"><b>Un seul accent par titre.</b> Trois lignes maximum.</span></div>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<!-- PALETTE -->
+<section>
+  <div class="wrap">
+    <span class="folio">ii</span>
+    <span class="sec-label">Palette · six valeurs</span>
+    <h2 class="sec-title">Vert empire pour la rigueur,<br/><span class="pink">rose</span> pour l'humain.</h2>
+    <p class="sec-sub">Palette conservée de la v1. Le rose Céline n'est plus un bullet décoratif — il souligne les labels et porte un seul mot par titre.</p>
+    <div class="palette">
+      <div class="swatch s-paper"><div class="chip"></div><div class="info"><div class="name">Papier</div><div class="hex">#FAFAF7</div><div class="use">Fond global, calme</div></div></div>
+      <div class="swatch s-sage"><div class="chip"></div><div class="info"><div class="name">Vert empire</div><div class="hex">#234E3E</div><div class="use">Primaire, rigueur</div></div></div>
+      <div class="swatch s-pink"><div class="chip"></div><div class="info"><div class="name">Rose Céline</div><div class="hex">#AE0060</div><div class="use">Signature humaine</div></div></div>
+      <div class="swatch s-ink"><div class="chip"></div><div class="info"><div class="name">Encre</div><div class="hex">#15201B</div><div class="use">Texte, contraste</div></div></div>
+      <div class="swatch s-amber"><div class="chip"></div><div class="info"><div class="name">Surligneur</div><div class="hex">#E8B96E</div><div class="use">Mise en avant rare</div></div></div>
+      <div class="swatch s-soft"><div class="chip"></div><div class="info"><div class="name">Vert empire clair</div><div class="hex">#BFD0C6</div><div class="use">Tags, surfaces</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPO -->
+<section>
+  <div class="wrap">
+    <span class="folio">iii</span>
+    <span class="sec-label">Typographies · deux familles</span>
+    <h2 class="sec-title">Une grotesk scandinave,<br/>un sans <em>par fonction.</em></h2>
+    <p class="sec-sub">Pas de serif éditorial à fort contraste pleins/déliés — le tic IA est dans cette famille. Ici tout est low-contrast, monolithique, choisi par raisonnement.</p>
+    <div class="typo-stack">
+      <div class="typo-card">
+        <div class="typo-meta">
+          <div class="name">Familjen Grotesk</div>
+          <div class="by">Letters from Sweden · Google Fonts, depuis 2022</div>
+          <div class="desc">Grotesk suédoise low-contrast. Les terminaisons sont <b>légèrement arrondies</b>, le R a des jambes presque droites, les courbes ont un swelling subtil. C'est une police qui a du caractère sans le performer — exactement le registre d'un imprimeur qui ferait du logiciel.</div>
+          <div class="weights">Roman 400 · 500 · 600 · 700 + italiques</div>
+        </div>
+        <div>
+          <div class="specimen">Aa <em>Rr</em></div>
+          <p class="running">Faible contraste, lettres stables même à grande échelle. L'italique du R porte le rose — un seul accent, jamais deux.</p>
+        </div>
+      </div>
+      <div class="typo-card">
+        <div class="typo-meta">
+          <div class="name">Atkinson Hyperlegible</div>
+          <div class="by">Braille Institute · Google Fonts</div>
+          <div class="desc">Sans-serif conçu pour la <b>lisibilité maximale</b> — distinctions claires entre 1 / I / l et 0 / O. Choix par fonction : les dirigeants de PME qu'on accompagne ont 45-60 ans et lisent des chiffres toute la journée. C'est le genre de décision qu'un designer humain prend pour des raisons qu'il peut défendre.</div>
+          <div class="weights">Regular 400 · Bold 700 · italiques</div>
+        </div>
+        <div>
+          <div class="specimen-body">Aa <b>Rr</b> 123</div>
+          <p class="running">Atkinson tient le corps. Les chiffres distinguent clairement les ambiguïtés — c'est ce qu'on demande à une typographie comptable.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIERARCHY -->
+<section>
+  <div class="wrap">
+    <span class="folio">iv</span>
+    <span class="sec-label">Hiérarchie · cinq niveaux</span>
+    <h2 class="sec-title">Du titre <em>au pied</em> de page.</h2>
+    <p class="sec-sub">Un seul accent par niveau — couleur ou italique, jamais les deux. La graisse et la coupure de ligne portent le reste de la tension.</p>
+    <div class="hier">
+      <div><div class="tag">titre</div><div class="h1-d">Comptabilité <em>automatisée.</em></div></div>
+      <div><div class="tag">sous-titre</div><div class="h2-d">La fin des Excel multiples</div></div>
+      <div><div class="tag">section</div><div class="h3-d">Automatisation des processus</div></div>
+      <div><div class="tag">corps</div><div class="body-d">PHR transforme vos processus comptables manuels en workflows automatisés. Vous gardez le contrôle. Nous supprimons la double saisie, les fichiers perdus, et les <em>heures de vendredi soir.</em></div></div>
+      <div><div class="tag">mention</div><div class="caption-d">PHR Fiduciaire SA · Sion (VS) · cabinet fondé en 1982</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section>
+  <div class="wrap">
+    <span class="folio">v</span>
+    <span class="sec-label">Composants · jeu minimal</span>
+    <h2 class="sec-title">Cinq pièces, <em>aucun gadget.</em></h2>
+    <p class="sec-sub">Boutons, tags, lien, indicateurs. Pas de bullets décoratifs. Pas de symboles terminal. Le mobilier reste à sa place.</p>
+    <div class="comp-grid">
+      <div class="comp">
+        <span class="label">Boutons</span>
+        <div style="display:flex;flex-wrap:wrap;gap:14px">
+          <button class="btn-primary">Demander une démo<span class="arrow">→</span></button>
+          <button class="btn-secondary">Voir la méthode</button>
+        </div>
+      </div>
+      <div class="comp">
+        <span class="label">Tags &amp; badges</span>
+        <div style="margin-bottom:14px"><span class="tag-c">PME</span><span class="tag-c">Indépendants</span><span class="tag-c outline">Cabinets médicaux</span></div>
+        <div><span class="badge-c">Automation active</span> <span class="badge-c amber" style="margin-left:8px">Pilote en cours</span></div>
+      </div>
+      <div class="comp">
+        <span class="label">Lien éditorial</span>
+        <a class="link-c" href="#">Lire l'étude Renu &amp; Co<span class="arrow">→</span></a>
+      </div>
+      <div class="comp">
+        <span class="label">Indicateurs</span>
+        <div class="kpi"><span class="num">−<em>87</em>%</span><span class="lab">heures de saisie manuelle, sur trois mois</span></div>
+        <div class="kpi"><span class="num"><em>14</em>j</span><span class="lab">durée moyenne d'onboarding</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section>
+  <div class="wrap">
+    <span class="folio">vi</span>
+    <span class="sec-label">Ton éditorial · trois pièces</span>
+    <h2 class="sec-title">Direct, <em>sans jargon.</em></h2>
+    <p class="sec-sub">Chaque message tient en deux lignes. Un seul mot mis en relief. Le reste tient grâce au rythme oral.</p>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="type">Slogan</div>
+        <div class="quote">Vos comptes <em>automatisés.</em><br/>Vos décisions libérées.</div>
+        <div class="why">Promesse double, mais un seul accent visuel. La tension naît de la coupure de ligne, pas de la couleur.</div>
+      </div>
+      <div class="voice-card">
+        <div class="type">Accroche hero</div>
+        <div class="quote">On supprime vos Excel.<br/>Céline reste <em>au téléphone.</em></div>
+        <div class="why">L'angle différenciant — tech sans froideur — en deux lignes. Le prénom de Céline est la preuve de l'humain ; l'italique tombe sur la promesse.</div>
+      </div>
+      <div class="voice-card">
+        <div class="type">CTA</div>
+        <div class="quote">Voir si on peut vous faire gagner <em>six heures</em> par semaine.</div>
+        <div class="why">Pas « contactez-nous ». Une promesse quantifiée et testable. La conditionnelle empêche la promesse creuse.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUP -->
+<section>
+  <div class="wrap">
+    <span class="folio">vii</span>
+    <span class="sec-label">Mise en scène · hero homepage</span>
+    <h2 class="sec-title">Une page qui parle PME,<br/><em>pas startup.</em></h2>
+    <p class="sec-sub">Un seul accent dans le titre principal. Trois lignes maximum. Le reste vit dans le sous-titre et l'aside.</p>
+    <div class="mockup">
+      <div class="mock-top">
+        <div class="brand"><img src="phr-logo.png" alt="PhR" /></div>
+        <div class="mock-nav"><span>Services</span><span>Méthode</span><span>Tarifs</span><span>Cas clients</span><span>Contact</span></div>
+      </div>
+      <div class="mock-hero">
+        <div>
+          <h2>On code votre comptabilité,<br/>vous dirigez votre <em>boîte.</em></h2>
+          <p>PHR Fiduciaire combine la rigueur d'un cabinet suisse fondé en 1982 et l'efficacité d'un atelier d'automatisation contemporain. Vos fichiers Excel multiples disparaissent ; vos chiffres restent à jour ; Céline reste à un appel près.</p>
+          <div class="mock-cta">
+            <button class="btn-primary">Diagnostic gratuit<span class="arrow">→</span></button>
+            <button class="btn-secondary">Voir un cas client</button>
+          </div>
+        </div>
+        <aside class="mock-aside">
+          <span class="who">Cas client · vignerons valaisans</span>
+          <p class="quote">On a récupéré <b>vingt-deux heures</b> sur le mois suivant.</p>
+          <span class="signature">— Magali R., dirigeante d'une PME viticole de quatorze personnes (Valais).</span>
+          <div class="stats">
+            <div class="stat"><span class="n">−22h</span><span class="l">par mois, dès le deuxième mois</span></div>
+            <div class="stat"><span class="n">3 mois</span><span class="l">de retour sur investissement complet</span></div>
+          </div>
+        </aside>
+      </div>
+      <div class="mock-foot">
+        <span>PHR Fiduciaire SA · Sion (VS) · CHE-123.456.789</span>
+        <span>Cabinet fondé en 1982 · repris par CR</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATIONALE -->
+<section>
+  <div class="wrap">
+    <span class="folio">viii</span>
+    <span class="sec-label">Note d'intention · pourquoi cette refonte</span>
+    <h2 class="sec-title">Sortir du slop,<br/>pas du <em>métier.</em></h2>
+    <div class="rationale">
+      <h3>Une grotesk qui <em>n'arrive pas</em> par défaut.</h3>
+      <div class="body">
+        <p>La v2 utilisait Roboto Serif. Choix raté : un serif éditorial à fort contraste pleins/déliés appartient à la <b>famille Playfair / Cormorant / Fraunces</b> que les LLM sortent par défaut quand on leur demande de l'élégant. Même si Roboto Serif est moins connu, il vit dans le même registre visuel — et un œil exercé l'identifie en deux secondes.</p>
+        <p>Cette v3 change de famille entière. <b>Familjen Grotesk</b> (Letters from Sweden, 2022) est une grotesk low-contrast — les pleins et les déliés sont quasi-identiques, le rendu reste <em>stable et monolithique</em> à toutes les tailles. Elle a des quirks réels qu'on remarque sans pouvoir les nommer : terminaisons légèrement arrondies, R aux jambes presque droites, swelling discret sur les courbes. Aucun générateur ne la sort par défaut — elle est trop spécifique, trop scandinave.</p>
+        <p>La paire display + body crée la tension demandée : Familjen apporte le caractère, Atkinson Hyperlegible tient le rôle de fond avec une <b>autorité fonctionnelle</b> (police designée pour la lisibilité, pas pour le style). Deux décisions par raisonnement, pas par mode.</p>
+        <p>Sur le traitement : <b>un seul accent par titre.</b> Plus de double coloration ("code" vert ET "boîte" rose dans la même phrase) — c'était le tell. Les titres font deux ou trois lignes maximum ; ce qui dépasse va dans le sous-titre. La tension naît de la coupure de ligne et du contraste roman / italique, pas d'une succession d'effets.</p>
+        <p>Risque assumé : Familjen Grotesk peut être confondue avec une grotesk Apartamento-magazine si la mise en page tombe dans le Scandi-cliché. On compense par la palette PHR (vert empire + rose vif), qui ne vient pas de Stockholm. Et par la fréquence rare du rose — il <em>souligne,</em> il ne <em>décore</em> pas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <span>PHR Brandkit · Direction B2 · version 4 · rose en signature rare</span>
+  <span>Sion · MMXXVI</span>
+</footer>
+
+</body>
+</html>
