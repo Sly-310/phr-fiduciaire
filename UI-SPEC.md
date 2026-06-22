@@ -27,19 +27,19 @@
 | `sage-deep` | `#143226` | Fonds sombres (section automatisation, footer) |
 | `sage-soft` | `#BFD0C6` | Surfaces douces, tags |
 | `logo-grey` | `#959595` | Gris du P et du h du logo |
-| `cerise` | `#AE0060` | **SIGNATURE — usage rare. Couleur du R du logo.** |
-| `cerise-deep` | `#87004A` | Variante foncée, hover, fonds |
-| `cerise-soft` | `#F4D6E4` | Très rare, fond prune pâle |
+| `bordeaux` | `#6E2347` | **SIGNATURE — usage rare. Couleur du R du logo.** |
+| `bordeaux-deep` | `#511733` | Variante foncée, hover, fonds |
+| `bordeaux-soft` | `#F2E1E8` | Très rare, fond prune pâle |
 | `amber` | `#E8B96E` | Surligneur, mise en avant ponctuelle |
 
-> **Couleur de marque officielle** relevée au pixel sur le logo PHR (cœur du tracé du R, hors bruit JPEG) : un **cerise / magenta vif `#AE0060`**. C'est la signature de Céline et la couleur du R du logo. Le P et le h du logo sont en gris `#959595`. Note : un premier relevé donnait un bordeaux `#6E2347` — c'était une moyenne faussée par les bords antialiasés ; la vraie couleur est plus vive.
+> **Couleur de marque officielle** relevée sur le logo PHR : le R est en bordeaux/prune profond `#6E2347` (et non un rose vif). C'est la signature de Céline et la couleur historique de la maison. Le P et le h du logo sont en gris `#959595`.
 
-### Règle du cerise (CRITIQUE)
+### Règle du bordeaux (CRITIQUE)
 Maximum **2 occurrences par page** :
 1. Un mot-clé fort dans un titre (ex : "maintenant" au hero)
 2. Un élément signature discret (point, fine ligne, le R)
 Jamais : aplat large, plusieurs mots colorés dans un titre, usage décoratif répété.
-Vif mais rare : c'est précisément parce qu'il apparaît peu qu'il fonctionne comme signature. Il porte le renouveau de Céline sans jamais déborder sur le côté "maison de confiance depuis 1982".
+Ce bordeaux est sérieux et établi — il ancre le côté "maison de confiance depuis 1982" tout en restant la signature du renouveau porté par Céline.
 
 ---
 
@@ -68,7 +68,7 @@ Choix par fonction : lisibilité maximale, y compris pour les clients âgés (de
 | Hero H1 | display 700 | clamp(58px, 7.2vw, 108px) | line-height 1.0, letter-spacing -0.022em |
 | Section title | display 700 | clamp(40px, 4.4vw, 60px) | line-height 1.04, max-width 20ch |
 | H2 | display 600 italic | 36px | couleur sage |
-| H3 | display 700 italic | 17px | couleur sage (PAS cerise) |
+| H3 | display 700 italic | 17px | couleur sage (PAS bordeaux) |
 | Body | body 400 | 17px | line-height 1.65, max-width 62ch |
 | Sous-titre | body 400 | 17-19px | couleur ink-soft |
 | Caption | display 400 italic | 14px | couleur ink-soft |

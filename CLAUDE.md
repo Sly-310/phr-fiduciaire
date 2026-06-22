@@ -25,8 +25,8 @@ On construit **section par section**. Une section = un livrable. Après chaque s
 ### 3. Respect strict de la charte
 Les tokens de `UI-SPEC.md` sont la seule source de vérité visuelle. Ils proviennent du brandkit validé `phr-direction-B2-v4`. Ne pas dériver, ne pas "améliorer" sans demande explicite.
 
-### 4. Le cerise est une signature, pas une couleur d'usage
-Le cerise (#AE0060, la couleur du R du logo) apparaît dans deux contextes maximum par page : un mot-clé de titre fort + un élément signature discret. JAMAIS décoratif, jamais en aplat de fond large, jamais sur plusieurs mots d'un même titre.
+### 4. Le bordeaux est une signature, pas une couleur d'usage
+Le bordeaux (#6E2347, la couleur du R du logo) apparaît dans deux contextes maximum par page : un mot-clé de titre fort + un élément signature discret. JAMAIS décoratif, jamais en aplat de fond large, jamais sur plusieurs mots d'un même titre.
 
 ### 5. Zéro slop typographique
 Interdits formels : eyebrows en `//` ou `▸`, tags monospace style terminal, serif à fort contraste pleins/déliés, titres colorés sur plusieurs mots, pills `border-radius: 999px`, lorem ipsum. Le radius standard est 3px.

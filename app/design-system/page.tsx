@@ -20,9 +20,9 @@ const PALETTE = [
   { name: "Sage", hex: "#234E3E", chip: "bg-sage", use: "Primaire, accents" },
   { name: "Sage deep", hex: "#143226", chip: "bg-sage-deep", use: "Fonds sombres, footer" },
   { name: "Sage soft", hex: "#BFD0C6", chip: "bg-sage-soft", use: "Surfaces douces, tags" },
-  { name: "Cerise", hex: "#AE0060", chip: "bg-cerise", use: "SIGNATURE — usage rare (R du logo)" },
-  { name: "Cerise deep", hex: "#87004A", chip: "bg-cerise-deep", use: "Hover, contraste" },
-  { name: "Cerise soft", hex: "#F4D6E4", chip: "bg-cerise-soft border border-line", use: "Texte clair sur fond sage" },
+  { name: "Bordeaux", hex: "#6E2347", chip: "bg-bordeaux", use: "SIGNATURE — usage rare (R du logo)" },
+  { name: "Bordeaux deep", hex: "#511733", chip: "bg-bordeaux-deep", use: "Hover, contraste" },
+  { name: "Bordeaux soft", hex: "#F2E1E8", chip: "bg-bordeaux-soft border border-line", use: "Texte clair sur fond sage" },
   { name: "Amber", hex: "#E8B96E", chip: "bg-amber", use: "Surligneur, filigrane" },
   { name: "Logo grey", hex: "#959595", chip: "bg-[#959595]", use: "P et h du logo" },
 ];
@@ -42,7 +42,7 @@ export default function DesignSystemPage() {
       <header className="border-b border-line py-14">
         <SectionLabel>Design System · validation des tokens</SectionLabel>
         <h1 className="font-display text-[clamp(40px,6vw,72px)] font-bold leading-[1.02] tracking-tighter text-ink">
-          PHR Fiduciaire — <span className="italic text-cerise">charte</span> en réel.
+          PHR Fiduciaire — <span className="italic text-bordeaux">charte</span> en réel.
         </h1>
         <p className="mt-5 max-w-[60ch] font-body text-[17px] leading-relaxed text-ink-soft">
           Rendu des tokens issus de <code className="text-ink">UI-SPEC.md</code>{" "}
@@ -56,7 +56,7 @@ export default function DesignSystemPage() {
         <Folio n="i" />
         <SectionLabel>Palette · 15 tokens</SectionLabel>
         <h2 className="mb-14 max-w-[20ch] font-display text-[clamp(32px,4vw,52px)] font-bold leading-[1.04] tracking-tightish text-ink">
-          Vert empire pour la rigueur, <span className="italic text-cerise">cerise</span> pour la signature.
+          Vert empire pour la rigueur, <span className="italic text-bordeaux">bordeaux</span> pour la signature.
         </h2>
         <div className="grid grid-cols-2 border-l border-t border-line sm:grid-cols-3 lg:grid-cols-5">
           {PALETTE.map((c) => (
@@ -82,7 +82,7 @@ export default function DesignSystemPage() {
           <div className="border-b border-line py-12 md:border-r md:pr-12">
             <div className="mb-5 font-display text-sm italic text-ink-soft">Display · Familjen Grotesk</div>
             <div className="font-display text-[120px] font-bold leading-none tracking-tightest text-ink">
-              Aa <span className="italic text-cerise">Rr</span>
+              Aa <span className="italic text-bordeaux">Rr</span>
             </div>
             <p className="mt-6 max-w-[44ch] font-display text-[19px] leading-snug text-ink">
               Grotesk low-contrast, monolithique. L&rsquo;italique du R porte la signature.
@@ -157,22 +157,22 @@ export default function DesignSystemPage() {
         </div>
       </section>
 
-      {/* RÈGLE CERISE */}
+      {/* RÈGLE BORDEAUX */}
       <section className="relative py-28">
         <Folio n="iv" />
-        <SectionLabel>Règle de la cerise</SectionLabel>
+        <SectionLabel>Règle du bordeaux</SectionLabel>
         <h2 className="mb-8 max-w-[24ch] font-display text-[clamp(32px,4vw,52px)] font-bold leading-[1.04] tracking-tightish text-ink">
-          Maximum <span className="italic text-cerise">deux</span> occurrences par page.
+          Maximum <span className="italic text-bordeaux">deux</span> occurrences par page.
         </h2>
         <div className="grid gap-6 border-t border-line-strong pt-10 md:grid-cols-2">
           <p className="font-body text-[17px] leading-relaxed text-ink">
-            La cerise <span className="text-cerise">#AE0060</span> est une signature, pas une couleur d&rsquo;usage.
-            Elle apparaît dans deux contextes maximum : un mot-clé fort dans un titre,
+            Le bordeaux <span className="text-bordeaux">#6E2347</span> est une signature, pas une couleur d&rsquo;usage.
+            Il apparaît dans deux contextes maximum : un mot-clé fort dans un titre,
             et un élément signature discret (point, fine ligne, le R du logo).
           </p>
           <p className="font-body text-[17px] leading-relaxed text-ink-soft">
             Jamais d&rsquo;aplat large, jamais plusieurs mots colorés dans un même titre, jamais décoratif.
-            Vif mais rare : c&rsquo;est parce qu&rsquo;elle apparaît peu qu&rsquo;elle fonctionne.
+            Profond et rare : c&rsquo;est parce qu&rsquo;il apparaît peu qu&rsquo;il fonctionne comme signature.
           </p>
         </div>
       </section>

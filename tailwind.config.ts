@@ -31,10 +31,10 @@ const config: Config = {
           soft: "#BFD0C6",
         },
         // SIGNATURE — usage rare (max 2 occurrences / page). Couleur du R du logo.
-        cerise: {
-          DEFAULT: "#AE0060",
-          deep: "#87004A",
-          soft: "#F4D6E4",
+        bordeaux: {
+          DEFAULT: "#6E2347",
+          deep: "#511733",
+          soft: "#F2E1E8",
         },
         amber: "#E8B96E",
         "logo-grey": "#959595",

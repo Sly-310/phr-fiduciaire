@@ -23,7 +23,7 @@ export function EditorialLink({
     >
       <span className="border-b-2 border-sage pb-[3px]">{children}</span>
       <span
-        className="font-normal not-italic text-cerise transition-transform duration-300 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-[5px]"
+        className="font-normal not-italic text-bordeaux transition-transform duration-300 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:translate-x-[5px]"
         aria-hidden="true"
       >
         {arrow}

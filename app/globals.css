@@ -14,8 +14,8 @@ body {
 }
 
 ::selection {
-  background: #f4d6e4; /* cerise-soft */
-  color: #87004a; /* cerise-deep */
+  background: #F2E1E8; /* bordeaux-soft */
+  color: #511733; /* bordeaux-deep */
 }
 
 @layer utilities {

@@ -12,7 +12,7 @@ type ButtonProps = {
  * Bouton — UI-SPEC § Composants.
  * Primaire : fond ink, texte paper, hover → sage-deep.
  * Secondaire : transparent, bordure 1.5px ink.
- * Radius 3px (jamais de pill). Flèche en accent cerise.
+ * Radius 3px (jamais de pill). Flèche en accent bordeaux.
  */
 export function Button({
   children,
@@ -30,8 +30,8 @@ export function Button({
 
   const arrowColor =
     variant === "primary"
-      ? "text-cerise-soft"
-      : "text-cerise group-hover:text-paper";
+      ? "text-bordeaux-soft"
+      : "text-bordeaux group-hover:text-paper";
 
   const content = (
     <>
