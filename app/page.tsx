@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { Reperes } from "@/components/sections/Reperes";
 
 export default function Home() {
   return (
@@ -52,6 +53,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Reperes />
       <Footer />
     </>
   );
