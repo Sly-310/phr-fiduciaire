@@ -91,7 +91,7 @@ Choix par fonction : lisibilité maximale, y compris pour les clients âgés (de
 
 ## LAYOUT
 
-- Largeur max contenu : `1240px`
+- Largeur max contenu : `1380px`
 - Padding latéral : 56px desktop / réduire proportionnellement mobile
 - Sections : padding vertical généreux (~128px top, 144px bottom desktop)
 - Séparation des sections : bordure fine `line` en haut

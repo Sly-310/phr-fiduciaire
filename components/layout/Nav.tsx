@@ -38,30 +38,37 @@ export function Nav() {
           scrolled ? "py-3" : "py-5"
         }`}
       >
-        {/* Logo */}
+        {/* Logo seul — porte l'identité visuelle */}
         <a href="#top" className="flex items-center" aria-label="PHR Fiduciaire — accueil">
           <Image
             src="/phr-logo.png"
             alt="PHR Fiduciaire"
-            width={69}
-            height={40}
+            width={96}
+            height={56}
             priority
-            className="h-10 w-auto"
+            className="h-[56px] w-auto"
           />
         </a>
 
         {/* Navigation desktop */}
         <nav className="hidden items-center gap-8 md:flex">
-          {LINKS.map((l) => (
+          {LINKS.filter((l) => l.href !== "#contact").map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="group relative font-body text-[15px] text-ink-soft transition-colors duration-300 hover:text-ink"
+              className="group relative font-body text-[15px] font-bold text-ink transition-colors duration-300 hover:text-sage"
             >
               {l.label}
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-sage transition-[width] duration-300 ease-[cubic-bezier(.2,.7,.2,1)] group-hover:w-full" />
             </a>
           ))}
+          {/* Contact — action principale, traitée en chip sobre */}
+          <a
+            href="#contact"
+            className="rounded-sm border border-ink px-4 py-2 font-body text-[15px] font-bold text-ink transition-colors duration-300 hover:bg-ink hover:text-paper"
+          >
+            Contact
+          </a>
         </nav>
 
         {/* Hamburger mobile */}

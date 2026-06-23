@@ -44,7 +44,7 @@ const config: Config = {
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        content: "1240px",
+        content: "1380px",
       },
       borderRadius: {
         // Radius standard du projet. Jamais de pills (999px = slop 2024).
