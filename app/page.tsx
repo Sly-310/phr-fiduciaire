@@ -3,6 +3,9 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Reperes } from "@/components/sections/Reperes";
 import { Prestations } from "@/components/sections/Prestations";
+import { Automatisation } from "@/components/sections/Automatisation";
+import { Approche } from "@/components/sections/Approche";
+import { Equipe } from "@/components/sections/Equipe";
 
 export default function Home() {
   return (
@@ -11,7 +14,7 @@ export default function Home() {
       <Nav />
       <main className="mx-auto max-w-content px-7 md:px-14">
         {/* HERO — composition "document fiduciaire" */}
-        <section className="flex min-h-[80vh] flex-col justify-center py-16 md:py-24">
+        <section className="flex min-h-[78vh] flex-col justify-center py-12 md:py-16">
           {/* En-tête de document : filet + émetteur (eyebrow) + crédit */}
           <div className="flex items-baseline justify-between gap-6 border-t border-line-strong pt-5">
             <p className="font-display text-[15px] tracking-tightish text-ink md:text-[16px]">
@@ -41,18 +44,13 @@ export default function Home() {
               Découvrir nos prestations
             </Button>
           </div>
-
-          {/* Filet de clôture : services + trait signature (sage — bordeaux réattribué au bloc automatisation, option A) */}
-          <div className="mt-16 flex items-center justify-between gap-6 border-t border-line pt-4">
-            <span className="font-display text-[13px] italic text-ink-light">
-              Comptabilité · Fiscalité · Automatisation des processus
-            </span>
-            <span className="h-px w-10 bg-sage" aria-hidden="true" />
-          </div>
         </section>
       </main>
       <Reperes />
       <Prestations />
+      <Automatisation />
+      <Approche />
+      <Equipe />
       <Footer />
     </>
   );

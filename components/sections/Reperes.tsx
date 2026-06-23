@@ -9,6 +9,10 @@ const REPERES = [
     desc: "Plus de quarante ans au service du tissu économique valaisan",
   },
   {
+    cle: "10 collaborateurs",
+    desc: "Une équipe compétente, à votre écoute",
+  },
+  {
     cle: "Valais & Romandie",
     desc: "Un ancrage local, une disponibilité réelle",
   },
@@ -21,13 +25,10 @@ const REPERES = [
 export function Reperes() {
   return (
     <section className="border-t border-line">
-      <div className="mx-auto max-w-content px-7 py-16 md:px-14 md:py-24">
-        <div className="grid divide-line md:grid-cols-3 md:divide-x">
+      <div className="mx-auto max-w-content px-7 py-14 md:px-14 md:py-20">
+        <div className="grid gap-10 sm:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {REPERES.map((r, i) => (
-            <div
-              key={r.cle}
-              className="border-t border-line py-8 first:border-t-0 md:border-t-0 md:px-10 md:py-0 md:first:pl-0 md:last:pr-0"
-            >
+            <div key={r.cle}>
               <span className="font-display text-[13px] italic text-sage">
                 {String(i + 1).padStart(2, "0")}
               </span>
