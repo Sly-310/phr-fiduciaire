@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Reperes } from "@/components/sections/Reperes";
+import { Prestations } from "@/components/sections/Prestations";
 
 export default function Home() {
   return (
@@ -41,19 +42,17 @@ export default function Home() {
             </Button>
           </div>
 
-          {/* Filet de clôture : services + repère signature (point bordeaux) */}
+          {/* Filet de clôture : services + trait signature (sage — bordeaux réattribué au bloc automatisation, option A) */}
           <div className="mt-16 flex items-center justify-between gap-6 border-t border-line pt-4">
             <span className="font-display text-[13px] italic text-ink-light">
               Comptabilité · Fiscalité · Automatisation des processus
             </span>
-            <span className="flex items-center gap-2" aria-hidden="true">
-              <span className="h-px w-10 bg-sage" />
-              <span className="h-[6px] w-[6px] rounded-sm bg-bordeaux" />
-            </span>
+            <span className="h-px w-10 bg-sage" aria-hidden="true" />
           </div>
         </section>
       </main>
       <Reperes />
+      <Prestations />
       <Footer />
     </>
   );
