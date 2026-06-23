@@ -43,7 +43,7 @@ export function DossiersAnime() {
           initial={{ x: s.init.x, y: s.init.y, rotate: s.init.rotate, opacity: 0 }}
           whileInView={{ x: s.final.x, y: s.final.y, rotate: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, delay: i * 0.12, ease: [0.2, 0.7, 0.2, 1] }}
+          transition={{ duration: 1.6, delay: i * 0.28, ease: [0.16, 1, 0.3, 1] }}
         >
           {SHEET}
         </motion.div>

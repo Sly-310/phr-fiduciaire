@@ -20,10 +20,28 @@ const body = Atkinson_Hyperlegible({
   display: "swap",
 });
 
+const BASE_URL = "https://www.phrfiduciaire.ch";
+
 export const metadata: Metadata = {
-  title: "PHR Fiduciaire — Cabinet fiduciaire à Fully, Valais",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "PHR Fiduciaire — Cabinet fiduciaire à Fully, Valais",
+    template: "%s — PHR Fiduciaire",
+  },
   description:
-    "Comptabilité, conseil et automatisation des processus pour les PME, indépendants et particuliers du Valais. Cabinet fiduciaire établi à Fully depuis 1982.",
+    "Comptabilité, conseil et automatisation des processus pour les PME, indépendants et particuliers du Valais. Cabinet fiduciaire établi à Fully depuis 1982. Expert-réviseur agréé ASR.",
+  alternates: { canonical: BASE_URL },
+  openGraph: {
+    type: "website",
+    locale: "fr_CH",
+    url: BASE_URL,
+    siteName: "PHR Fiduciaire",
+    title: "PHR Fiduciaire — Cabinet fiduciaire à Fully, Valais",
+    description:
+      "Comptabilité, conseil et automatisation des processus pour les PME et indépendants du Valais. Établi à Fully depuis 1982.",
+  },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

@@ -7,6 +7,38 @@ import { Automatisation } from "@/components/sections/Automatisation";
 import { Approche } from "@/components/sections/Approche";
 import { Equipe } from "@/components/sections/Equipe";
 
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  name: "PHR Fiduciaire SA",
+  url: "https://www.phrfiduciaire.ch",
+  telephone: "+41277462954",
+  email: "info@phrfiduciaire.ch",
+  foundingDate: "1982",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Rue Maison-de-Commune 20",
+    postalCode: "1926",
+    addressLocality: "Fully",
+    addressRegion: "Valais",
+    addressCountry: "CH",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 46.1333,
+    longitude: 7.1167,
+  },
+  areaServed: [
+    { "@type": "State", name: "Valais" },
+    { "@type": "Country", name: "Suisse romande" },
+  ],
+  hasCredential: "Expert-réviseur agréé ASR",
+  employee: [
+    { "@type": "Person", name: "Philippe Roduit", jobTitle: "Fondateur, Expert-réviseur agréé ASR" },
+    { "@type": "Person", name: "Céline Roduit", jobTitle: "Cheffe expert, Branche fiduciaire et immobilière" },
+  ],
+};
+
 export default function Home() {
   return (
     <>
@@ -52,6 +84,10 @@ export default function Home() {
       <Approche />
       <Equipe />
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
+      />
     </>
   );
 }
