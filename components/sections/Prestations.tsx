@@ -1,4 +1,29 @@
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import {
+  Notebook,
+  Percent,
+  Banknote,
+  Scroll,
+  Stamp,
+  Handshake,
+  Stethoscope,
+  House,
+  Compass,
+  type LucideIcon,
+} from "lucide-react";
+
+// TEST pictos — banque Lucide (outline fin régulier, monochrome encre).
+const ICONS: Record<string, LucideIcon> = {
+  comptabilite: Notebook,
+  fiscalite: Percent,
+  salaires: Banknote,
+  successions: Scroll,
+  expertises: Stamp,
+  "transmission-entreprise": Handshake,
+  "cabinets-medicaux": Stethoscope,
+  "family-office": House,
+  "conseil-coaching": Compass,
+};
 
 /**
  * Section Prestations — PHR-ARCHITECTURE. Ancre #prestations.
@@ -47,12 +72,22 @@ export function Prestations() {
 
         {/* Grille de cartes — filets, sans icône, sans bordeaux */}
         <div className="mt-14 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
-          {CARTES.map((c) => (
+          {CARTES.map((c) => {
+            const Icon = ICONS[c.slug];
+            return (
             <a
               key={c.slug}
               href={`/prestations/${c.slug}`}
               className="group flex flex-col border-b border-r border-line p-8 transition-colors duration-300 hover:bg-paper-2"
             >
+              {Icon && (
+                <Icon
+                  size={26}
+                  strokeWidth={1.5}
+                  className="mb-6 text-ink"
+                  aria-hidden="true"
+                />
+              )}
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="font-display text-[20px] font-semibold tracking-tightish text-ink transition-colors duration-300 group-hover:text-sage">
                   {c.titre}
@@ -68,7 +103,8 @@ export function Prestations() {
                 {c.desc}
               </p>
             </a>
-          ))}
+            );
+          })}
         </div>
       </div>
 
