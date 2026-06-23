@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Nav } from "@/components/layout/Nav";
+import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -51,6 +52,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
