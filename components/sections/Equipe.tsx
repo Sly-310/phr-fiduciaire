@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
-const EASE = [0.16, 1, 0.3, 1] as const;
+const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-const PH_VARIANTS = {
+const PH_VARIANTS: Variants = {
   hidden: { x: "48%", opacity: 0 },
   visible: {
     x: ["48%", "48%", "0%"],
@@ -15,7 +15,7 @@ const PH_VARIANTS = {
   },
 };
 
-const R_VARIANTS = {
+const R_VARIANTS: Variants = {
   hidden: { x: "-48%", opacity: 0 },
   visible: {
     x: ["-48%", "-48%", "0%"],
@@ -24,12 +24,12 @@ const R_VARIANTS = {
   },
 };
 
-const TEXT_VARIANTS = {
+const TEXT_VARIANTS: Variants = {
   hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, delay: 1.35, ease: [0.2, 0.7, 0.2, 1] },
+    transition: { duration: 0.55, delay: 1.35, ease: [0.2, 0.7, 0.2, 1] as [number, number, number, number] },
   },
 };
 

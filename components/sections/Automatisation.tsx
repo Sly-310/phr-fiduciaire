@@ -10,10 +10,6 @@ const TITRE = "Vos processus, enfin structurés.";
 const TEXTE =
   "Les fichiers Excel éparpillés, jamais à jour, jamais au même endroit — c'est fini. Nous centralisons tout dans un système fiable, taillé pour durer.";
 const DIFFERENCE = "Un accompagnement sur place, jusqu'à ce que tout tourne seul.";
-const INCLUS = [
-  "Moins de saisie manuelle, moins d'erreurs",
-  "Des données à jour, en temps réel",
-];
 
 export function Automatisation() {
   return (
