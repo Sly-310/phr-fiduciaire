@@ -97,7 +97,7 @@ export function Contact() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label className="flex flex-col gap-2">
                     <span className="font-display text-[12px] font-semibold uppercase tracking-widest text-ink-light">Prénom</span>

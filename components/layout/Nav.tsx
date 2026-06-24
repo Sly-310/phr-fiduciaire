@@ -110,7 +110,7 @@ export function Nav() {
               href={l.href}
               onClick={() => setOpen(false)}
               tabIndex={open ? 0 : -1}
-              className="border-b border-line py-4 font-display text-[22px] italic text-ink transition-colors duration-200 last:border-b-0 hover:text-sage"
+              className="border-b border-line py-4 font-body text-[17px] font-bold text-ink transition-colors duration-200 last:border-b-0 hover:text-sage"
             >
               {l.label}
             </a>

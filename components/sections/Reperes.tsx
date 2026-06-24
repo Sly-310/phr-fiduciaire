@@ -44,9 +44,10 @@ const STATS = [
     start: 0,
     valeur: 100,
     suffix: "%",
-    label: "Agréé ASR",
+    display: "ASR",
+    label: "Expert-réviseur agréé",
     icon: Shield,
-    description: "Un accompagnement personnalisé pour tous vos projets.",
+    description: "Révision légale, expertises judiciaires — reconnu par la Confédération.",
   },
 ];
 
@@ -117,7 +118,7 @@ function StatCard({
           </span>
         )}
         <span className="font-display text-[clamp(32px,3.6vw,50px)] font-bold leading-none tracking-tighter text-ink">
-          {count}{stat.suffix}
+          {"display" in stat && stat.display ? stat.display : <>{count}{stat.suffix}</>}
         </span>
       </div>
       <div className="mt-3 font-display text-[14px] font-semibold tracking-tightish text-ink">
