@@ -1,11 +1,26 @@
-import { Button } from "@/components/ui/Button";
+import type { Metadata } from "next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { Reperes } from "@/components/sections/Reperes";
 import { Prestations } from "@/components/sections/Prestations";
 import { Automatisation } from "@/components/sections/Automatisation";
 import { Approche } from "@/components/sections/Approche";
 import { Equipe } from "@/components/sections/Equipe";
+import { Contact } from "@/components/sections/Contact";
+
+export const metadata: Metadata = {
+  title: "PHR Fiduciaire — Cabinet fiduciaire à Fully, Valais",
+  description:
+    "Comptabilité, fiscalité, salaires et automatisation des processus pour PME, indépendants et particuliers en Valais. Expert-réviseur agréé ASR depuis 1982.",
+  alternates: { canonical: "https://www.phrfiduciaire.ch" },
+  openGraph: {
+    url: "https://www.phrfiduciaire.ch",
+    title: "PHR Fiduciaire — Votre fiduciaire en Valais depuis 1982",
+    description:
+      "Comptabilité, conseil et automatisation des processus. Experts réviseurs agréés ASR à Fully, Valais.",
+  },
+};
 
 const LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
@@ -42,47 +57,19 @@ const LOCAL_BUSINESS_SCHEMA = {
 export default function Home() {
   return (
     <>
-      <span id="top" />
+      <span id="top" aria-hidden="true" />
       <Nav />
-      <main className="mx-auto max-w-content px-7 md:px-14">
-        {/* HERO — composition "document fiduciaire" */}
-        <section className="flex min-h-[78vh] flex-col justify-center py-12 md:py-16">
-          {/* En-tête de document : filet + émetteur (eyebrow) + crédit */}
-          <div className="flex items-baseline justify-between gap-6 border-t border-line-strong pt-5">
-            <p className="font-display text-[15px] tracking-tightish text-ink md:text-[16px]">
-              <span className="font-semibold">PHR Fiduciaire</span>
-              <span className="text-ink-light"> · Fully, Valais · depuis 1982</span>
-            </p>
-            <span className="hidden font-display text-[14px] italic text-ink-light sm:inline">
-              Expert-réviseur agréé ASR
-            </span>
-          </div>
-
-          {/* Titre mesuré */}
-          <h1 className="mt-14 max-w-[20ch] font-display text-[clamp(38px,4.8vw,68px)] font-bold leading-[1.05] tracking-tightish text-ink md:mt-20">
-            Votre fiduciaire en Valais.<br />
-            Solide, humaine, <span className="italic text-bordeaux">automatisée</span>.
-          </h1>
-
-          {/* Sous-titre */}
-          <p className="mt-7 max-w-[54ch] font-body text-[18px] leading-relaxed text-ink-soft md:text-[19px]">
-            Comptabilité, conseil et automatisation des processus pour les PME,
-            les indépendants et les particuliers du Valais.
-          </p>
-
-          {/* CTA */}
-          <div className="mt-10">
-            <Button href="#prestations" arrow="↓">
-              Découvrir nos prestations
-            </Button>
-          </div>
-        </section>
+      <main>
+        <div className="mx-auto max-w-content px-7 md:px-14">
+          <HeroSection />
+        </div>
+        <Reperes />
+        <Prestations />
+        <Automatisation />
+        <Approche />
+        <Equipe />
+        <Contact />
       </main>
-      <Reperes />
-      <Prestations />
-      <Automatisation />
-      <Approche />
-      <Equipe />
       <Footer />
       <script
         type="application/ld+json"

@@ -6,7 +6,7 @@ import Image from "next/image";
 const LINKS = [
   { label: "Prestations", href: "#prestations" },
   { label: "Approche", href: "#approche" },
-  { label: "Équipe", href: "#equipe" },
+  { label: "Le cabinet", href: "#equipe" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -99,7 +99,7 @@ export function Nav() {
 
       {/* Panneau mobile */}
       <div
-        className={`overflow-hidden border-t border-line bg-paper transition-[max-height] duration-400 ease-[cubic-bezier(.2,.7,.2,1)] md:hidden ${
+        className={`overflow-hidden border-t border-line bg-paper transition-[max-height] duration-[400ms] ease-[cubic-bezier(.2,.7,.2,1)] md:hidden ${
           open ? "max-h-80" : "max-h-0 border-transparent"
         }`}
       >
@@ -109,6 +109,7 @@ export function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
+              tabIndex={open ? 0 : -1}
               className="border-b border-line py-4 font-display text-[22px] italic text-ink transition-colors duration-200 last:border-b-0 hover:text-sage"
             >
               {l.label}
