@@ -110,8 +110,15 @@ function StatCard({
         className="mb-6 text-ink-light transition-colors duration-300 group-hover:text-sage"
         aria-hidden="true"
       />
-      <div className="font-display text-[clamp(32px,3.6vw,50px)] font-bold leading-none tracking-tighter text-ink tabular-nums">
-        {stat.prefix}{count}{stat.suffix}
+      <div className="tabular-nums">
+        {stat.prefix && (
+          <span className="mb-1 block font-body text-[11px] font-medium uppercase tracking-widest text-ink-light">
+            {stat.prefix.trim()}
+          </span>
+        )}
+        <span className="font-display text-[clamp(32px,3.6vw,50px)] font-bold leading-none tracking-tighter text-ink">
+          {count}{stat.suffix}
+        </span>
       </div>
       <div className="mt-3 font-display text-[14px] font-semibold tracking-tightish text-ink">
         {stat.label}

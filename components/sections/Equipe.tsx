@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -49,29 +50,16 @@ export function Equipe() {
     <section id="equipe" className="border-t border-line">
       <div className="mx-auto max-w-content px-7 py-16 md:px-14 md:py-24">
 
-        {/* PH · R qui se séparent */}
         <motion.div
-          className="overflow-hidden"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.4, ease: EASE }}
+          className="mb-4"
         >
-          <div className="flex items-baseline justify-between">
-            <motion.span
-              variants={{ hidden: { x: "45%", opacity: 0 }, visible: { x: 0, opacity: 1, transition: { duration: 1.1, ease: EASE } }}}
-              className="font-display text-[clamp(52px,7vw,90px)] font-bold leading-none tracking-tighter text-ink/15"
-            >
-              Ph
-            </motion.span>
-            <motion.span
-              variants={{ hidden: { x: "-45%", opacity: 0 }, visible: { x: 0, opacity: 1, transition: { duration: 1.1, ease: EASE } }}}
-              className="font-display text-[clamp(52px,7vw,90px)] font-bold leading-none tracking-tighter text-bordeaux/20"
-            >
-              R
-            </motion.span>
-          </div>
+          <SectionLabel>À propos</SectionLabel>
         </motion.div>
-        <h2 className="mt-4 max-w-[24ch] font-display text-[clamp(28px,3.2vw,46px)] font-bold leading-[1.06] tracking-tightish text-ink">
+        <h2 className="max-w-[24ch] font-display text-[clamp(28px,3.2vw,46px)] font-bold leading-[1.06] tracking-tightish text-ink">
           Deux générations, une même exigence.
         </h2>
 

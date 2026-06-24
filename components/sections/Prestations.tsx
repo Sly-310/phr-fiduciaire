@@ -9,7 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-const TITRE = "Tout ce qu'une fiduciaire doit savoir faire. Et quelque chose en plus.";
+const TITRE = "Un accompagnement personnalisé pour tous vos projets.";
 
 type Service = {
   slug: string;

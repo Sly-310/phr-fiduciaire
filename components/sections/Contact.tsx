@@ -20,7 +20,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="border-t border-line bg-paper">
-      <div className="mx-auto max-w-content px-7 py-16 md:px-14 md:py-24">
+      <div className="mx-auto max-w-content px-7 pt-16 pb-10 md:px-14 md:pt-24 md:pb-14">
 
         <div className="grid items-start gap-12 md:grid-cols-[1fr_1fr] md:gap-20">
 

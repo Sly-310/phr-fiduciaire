@@ -65,7 +65,7 @@ export function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
-        className="relative mt-10 max-w-[18ch] font-display text-[clamp(34px,4.8vw,68px)] font-bold leading-[1.05] tracking-tightish text-ink md:mt-20"
+        className="relative mt-6 max-w-[18ch] font-display text-[clamp(34px,4.8vw,68px)] font-bold leading-[1.05] tracking-tightish text-ink md:mt-12"
       >
         Votre fiduciaire en Valais.<br />
         Solide, humaine,{" "}
