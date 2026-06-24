@@ -31,20 +31,29 @@ function MountainFiligrane() {
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[72vh] flex-col justify-center overflow-hidden py-10 md:min-h-[78vh] md:py-16">
+    <section className="relative flex min-h-[72vh] flex-col overflow-hidden pt-8 pb-16 md:min-h-[78vh] md:pt-12 md:pb-24">
 
       <MountainFiligrane />
+
+      {/* Brand */}
+      <motion.p
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: EASE }}
+        className="relative font-display text-[clamp(20px,2.2vw,28px)] font-bold tracking-tightish text-ink"
+      >
+        PHR Fiduciaire
+      </motion.p>
 
       {/* Eyebrow */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: EASE }}
-        className="relative flex flex-wrap items-baseline justify-between gap-4 border-t border-line-strong pt-5"
+        transition={{ duration: 0.6, delay: 0.08, ease: EASE }}
+        className="relative mt-3 flex flex-wrap items-baseline justify-between gap-4 border-t border-line-strong pt-4"
       >
-        <p className="font-display text-[14px] tracking-tightish text-ink md:text-[16px]">
-          <span className="font-semibold">PHR Fiduciaire</span>
-          <span className="text-ink-light"> · Fully, Valais · depuis 1982</span>
+        <p className="font-display text-[13px] tracking-tightish text-ink-light md:text-[14px]">
+          Fully, Valais
         </p>
         <span className="font-display text-[13px] italic text-ink-light sm:text-[14px]">
           Expert-réviseur agréé ASR

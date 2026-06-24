@@ -22,7 +22,7 @@ export function Contact() {
     <section id="contact" className="border-t border-line bg-paper">
       <div className="mx-auto max-w-content px-7 py-16 md:px-14 md:py-24">
 
-        <div className="grid gap-12 md:grid-cols-[1fr_1fr] md:gap-20">
+        <div className="grid items-start gap-12 md:grid-cols-[1fr_1fr] md:gap-20">
 
           {/* ── Gauche : info + carte ── */}
           <motion.div
@@ -152,9 +152,6 @@ export function Contact() {
                   <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
                 </button>
 
-                <p className="font-body text-[12px] text-ink-light">
-                  Réponse sous 24h ouvrables. Données strictement confidentielles.
-                </p>
               </form>
             )}
           </motion.div>

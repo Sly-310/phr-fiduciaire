@@ -10,39 +10,43 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 const STATS = [
   {
     id: "annee",
-    start: 1970,
-    valeur: 1982,
-    suffix: "",
-    label: "Année de fondation",
+    prefix: "",
+    start: 0,
+    valeur: 40,
+    suffix: " ans",
+    label: "À vos côtés depuis 1982",
     icon: Calendar,
     description: "Quarante ans de continuité dans le même bureau.",
   },
   {
     id: "collaborateurs",
+    prefix: "",
     start: 0,
     valeur: 10,
-    suffix: "+",
+    suffix: "",
     label: "Collaborateurs",
     icon: Users,
-    description: "Une équipe à taille humaine, stable depuis des années.",
+    description: "Une équipe taillée pour vos défis.",
   },
   {
     id: "restructurations",
+    prefix: "Plus de ",
     start: 0,
     valeur: 40,
-    suffix: "+",
+    suffix: "",
     label: "Restructurations PME",
     icon: MapPin,
     description: "Mise en place de systèmes de gestion sur le terrain.",
   },
   {
     id: "asr",
+    prefix: "",
     start: 0,
     valeur: 100,
     suffix: "%",
     label: "Agréé ASR",
     icon: Shield,
-    description: "Expert-réviseur agréé par l'Autorité fédérale de surveillance.",
+    description: "Un accompagnement personnalisé pour tous vos projets.",
   },
 ];
 
@@ -106,9 +110,8 @@ function StatCard({
         className="mb-6 text-ink-light transition-colors duration-300 group-hover:text-sage"
         aria-hidden="true"
       />
-      <div className="font-display text-[clamp(36px,4vw,54px)] font-bold leading-none tracking-tighter text-ink tabular-nums">
-        {count}
-        {stat.suffix}
+      <div className="font-display text-[clamp(32px,3.6vw,50px)] font-bold leading-none tracking-tighter text-ink tabular-nums">
+        {stat.prefix}{count}{stat.suffix}
       </div>
       <div className="mt-3 font-display text-[14px] font-semibold tracking-tightish text-ink">
         {stat.label}

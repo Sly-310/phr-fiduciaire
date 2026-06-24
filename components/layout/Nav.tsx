@@ -6,7 +6,7 @@ import Image from "next/image";
 const LINKS = [
   { label: "Prestations", href: "#prestations" },
   { label: "Approche", href: "#approche" },
-  { label: "Le cabinet", href: "#equipe" },
+  { label: "À propos", href: "#equipe" },
   { label: "Contact", href: "#contact" },
 ];
 

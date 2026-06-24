@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -42,7 +41,7 @@ const PHILIPPE = [
 const CELINE = [
   "Cheffe expert · CFC fiduciaire",
   "Spécialiste systèmes de gestion",
-  "40+ restructurations PME valaisannes",
+  "Plus de 40 restructurations PME valaisannes",
 ];
 
 export function Equipe() {
@@ -50,8 +49,29 @@ export function Equipe() {
     <section id="equipe" className="border-t border-line">
       <div className="mx-auto max-w-content px-7 py-16 md:px-14 md:py-24">
 
-        <SectionLabel>Le cabinet</SectionLabel>
-        <h2 className="mt-2 max-w-[24ch] font-display text-[clamp(30px,3.6vw,50px)] font-bold leading-[1.06] tracking-tightish text-ink">
+        {/* PH · R qui se séparent */}
+        <motion.div
+          className="overflow-hidden"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <div className="flex items-baseline justify-between">
+            <motion.span
+              variants={{ hidden: { x: "45%", opacity: 0 }, visible: { x: 0, opacity: 1, transition: { duration: 1.1, ease: EASE } }}}
+              className="font-display text-[clamp(52px,7vw,90px)] font-bold leading-none tracking-tighter text-ink/15"
+            >
+              Ph
+            </motion.span>
+            <motion.span
+              variants={{ hidden: { x: "-45%", opacity: 0 }, visible: { x: 0, opacity: 1, transition: { duration: 1.1, ease: EASE } }}}
+              className="font-display text-[clamp(52px,7vw,90px)] font-bold leading-none tracking-tighter text-bordeaux/20"
+            >
+              R
+            </motion.span>
+          </div>
+        </motion.div>
+        <h2 className="mt-4 max-w-[24ch] font-display text-[clamp(28px,3.2vw,46px)] font-bold leading-[1.06] tracking-tightish text-ink">
           Deux générations, une même exigence.
         </h2>
 
@@ -59,7 +79,7 @@ export function Equipe() {
 
           {/* ── Philippe ── */}
           <motion.div
-            className="flex flex-col sm:pr-12 md:pr-16"
+            className="flex flex-col items-center text-center sm:pr-12 md:pr-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
@@ -98,7 +118,7 @@ export function Equipe() {
 
           {/* ── Céline ── */}
           <motion.div
-            className="flex flex-col pt-12 sm:border-l sm:border-line sm:pl-12 sm:pt-0 md:pl-16"
+            className="flex flex-col items-center text-center pt-12 sm:border-l sm:border-line sm:pl-12 sm:pt-0 md:pl-16"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
@@ -137,18 +157,6 @@ export function Equipe() {
 
         </div>
 
-        {/* Accréditations */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-14 flex flex-col gap-3 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between"
-        >
-          <p className="font-body text-[12px] leading-relaxed text-ink-soft">
-            Membre Fiduciaire Suisse · Expert Suisse · Experts réviseurs agréés ASR · CFC branche fiduciaire et immobilière
-          </p>
-        </motion.div>
 
       </div>
     </section>
